@@ -32,7 +32,6 @@
 
 #ifdef _MSC_VER
 #define snprintf _snprintf
-typedef unsigned long ssize_t;
 #endif
 
 #endif /* defined(__I18N__I18nDefine_H__) */
