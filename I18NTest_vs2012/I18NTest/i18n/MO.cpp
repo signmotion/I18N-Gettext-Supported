@@ -75,15 +75,15 @@ bool MO::loadMoFile(std::string filePath)
     
     std::ifstream fin(filePath, std::ifstream::in | std::ifstream::binary);
     unsigned char* bytes = nullptr;
-    unsigned long bytesLen = 0;
+    std::streamoff bytesLen = 0;
     
     if (fin && fin.is_open()) {
         fin.seekg(0, fin.end);
-        unsigned long size = fin.tellg();
+        const auto size = fin.tellg();
         fin.seekg(0, fin.beg);
         
         bytesLen = sizeof(unsigned char) * size;
-        bytes = new unsigned char[bytesLen];
+        bytes = new unsigned char[ (size_t)bytesLen ];
         fin.read((char*)bytes, size);
         
         fin.close();

@@ -425,7 +425,7 @@ string I18nUtils::formatMatch(const char* format, ...)
     }
     
     /** replace the all conversion format with corresponding index argument */
-    for (int i = 0; i < matchItrsMap.size(); i++) {
+    for (size_t i = 0; i < matchItrsMap.size(); i++) {
         auto matchItr = matchItrsMap.find(i);
         if (matchItr != matchItrsMap.end()) {
             auto matchInfo = matchItrsMap[i];

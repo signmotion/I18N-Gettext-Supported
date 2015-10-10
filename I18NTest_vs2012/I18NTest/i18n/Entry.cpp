@@ -80,7 +80,7 @@ std::string TranslateEntry::toString()
     auto str = Entry::toString();
     
     if (!_translations.empty()) {
-        for (int i = 0; i < _translations.size(); i++) {
+        for (size_t i = 0; i < _translations.size(); i++) {
             str += "\n\t";
             str += " Translation";
             if (1 < _translations.size()) {
