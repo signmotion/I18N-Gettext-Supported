@@ -26,8 +26,8 @@ int main(int argc, const char * argv[])
 	std::ofstream fout(OUTPUT_FILE, std::ios::out|std::ios::binary);
 	if (fout.is_open()) {
 		//UTF-8 dom
-		char domChars[3] = {0xEF, 0xBB, 0xBF};
-		fout.write(domChars, sizeof(domChars));
+		unsigned char domChars[3] = {0xEF, 0xBB, 0xBF};
+		fout.write( (char*)domChars, sizeof(domChars) );
 	} else {
 		printf("output file error. (Enter key to close)\n");
 		getchar();
@@ -77,7 +77,7 @@ int main(int argc, const char * argv[])
         auto mo = I18nUtils::getInstance()->getMO();
         output("noops:");
         
-        for (int i = 0; i < messages.size(); i++) {
+        for (size_t i = 0; i < messages.size(); i++) {
             auto isSingular = (mo.onPluralExpression(i) == 0);
             std::string prestr;
 #if (IS_ENABLE_FORMAT_MATCH_ARGS_INDEX == FORMAT_MATCH_ENABLE)
