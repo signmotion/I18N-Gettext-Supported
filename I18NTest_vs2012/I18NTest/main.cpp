@@ -26,8 +26,8 @@ int main(int argc, const char * argv[])
 	std::ofstream fout(OUTPUT_FILE, std::ios::out|std::ios::binary);
 	if (fout.is_open()) {
 		//UTF-8 dom
-		char domChars[3] = {0xEF, 0xBB, 0xBF};
-		fout.write(domChars, sizeof(domChars));
+		unsigned char domChars[3] = {0xEF, 0xBB, 0xBF};
+		fout.write( (char*)domChars, sizeof(domChars) );
 	} else {
 		printf("output file error. (Enter key to close)\n");
 		getchar();
