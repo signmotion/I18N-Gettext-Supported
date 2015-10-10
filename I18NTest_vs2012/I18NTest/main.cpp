@@ -77,7 +77,7 @@ int main(int argc, const char * argv[])
         auto mo = I18nUtils::getInstance()->getMO();
         output("noops:");
         
-        for (int i = 0; i < messages.size(); i++) {
+        for (size_t i = 0; i < messages.size(); i++) {
             auto isSingular = (mo.onPluralExpression(i) == 0);
             std::string prestr;
 #if (IS_ENABLE_FORMAT_MATCH_ARGS_INDEX == FORMAT_MATCH_ENABLE)
