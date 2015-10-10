@@ -1,0 +1,6 @@
+/I18NTest_vs2012/I18NTest/I18N-Gettext-Supported/Debug
+*.sdf
+*.suo
+I18NTest.vcxproj.user
+/I18NTest_vs2012/I18NTest/output.txt
+/build/vs2013-win32/I18N-Gettext-Supported/lib/Debug
